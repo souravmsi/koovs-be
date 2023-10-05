@@ -2,6 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import databaseConfig from './config/db.js'
 
+import { json } from "express";
+import authRouter from './routes/api/auth/index.js';
 
 dotenv.config();
 databaseConfig();
@@ -9,6 +11,15 @@ databaseConfig();
 
 
 const app = express();
+
+//Middlewares
+app.use(json());
+
+
+
+app.use('/api', authRouter);
+
+
 const port = 8000;
 
 
