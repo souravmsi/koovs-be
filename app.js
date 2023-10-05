@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import databaseConfig from './config/db.js'
 
 import { json } from "express";
-import authRouter from './routes/api/auth.js';
+import authRouter from './routes/api/auth/index.js';
 
 dotenv.config();
 databaseConfig();
