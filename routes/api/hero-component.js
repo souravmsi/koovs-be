@@ -1,20 +1,20 @@
 import express from 'express'
-import { addProduct, getAllProducts } from '../../controllers/api/women-products.js';
+import { createItem, getAllItems } from '../../controllers/api/hero-component.js';
 
 const router = express.Router(); 
 
-router.post('/women-product', async (req, res) => {
+router.post('/hero-component', async (req, res) => {
     try {
-        const data = await addProduct(req.body);
+        const data = await createItem(req.body);
         res.status(201).json(data);
     }catch(err){
         res.status(501).json({msg:'Something went wrong'});
     }
 })
 
-router.get('/women-products', async (req, res) => {
+router.get('/hero-components', async (req, res) => {
     try {
-        const data = await getAllProducts();
+        const data = await getAllItems();
         res.status(201).json(data);
     }catch(err){
         res.status(501).json({msg:'Something went wrong'});
