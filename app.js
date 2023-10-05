@@ -1,9 +1,20 @@
 import express from "express";
 import dotenv from "dotenv";
+import { json } from "express";
+import authRouter from './routes/api/auth.js';
 
 dotenv.config();
 
 const app = express();
+
+//Middlewares
+app.use(json());
+
+
+
+app.use('/api', authRouter);
+
+
 const port = 8000;
 
 app.listen(port, (err) => {
