@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import databaseConfig from './config/db.js'
-
+import cors from 'cors';
 import { json } from "express";
 import authRouter from './routes/api/auth/index.js';
 import heroRouter from './routes/api/hero-component.js';
@@ -17,7 +17,9 @@ databaseConfig();
 const app = express();
 
 //Middlewares
+app.use(cors());
 app.use(json());
+
 
 
 
