@@ -26,6 +26,7 @@ const isValidconfirmPassword = (value, { req }) => {
 };
 
 export const signupValidator = [
+  body('name').isLength({min: 2}).withMessage('Please enter a valid name'),
   body("email")
     .isEmail()
     .withMessage("Invalid email address")
