@@ -17,7 +17,7 @@ databaseConfig();
 const app = express();
 
 //Middlewares
-// app.use(cors());
+app.use(cors());
 app.use(json());
 
 
